@@ -1,0 +1,22 @@
+<div class="breadcrumb" xmlns:v="http://rdf.data-vocabulary.org/#"><ul>{% for genre in genres %}<li typeof="v:Breadcrumb">{{genre|safe}}</li>{% endfor %}<li>{{title}}</li></ul></div>
+<div class="product">
+	<img src="{{globals.book_images}}{% exec book.getImage %}" alt="Portada de {% exec book.getTitle %}" class="cover" />
+	<h1>{{title}}</h1>
+	{% if writers %}
+	<h2 class="author">de {% for writer in writers %}{% if ! forloop.first %}, {% endif %}<span class="dc:creator">{{writer|safe}}</span>{% endfor %}
+	</h2>
+	{% endif %}
+	<ul class="metadata">
+		{% if contributors %}
+		<li>con contribuciones de {% for contributor in contributors %}{% if ! forloop.first %}, {% endif %}{{contributor|safe}}{% endfor %}</li>
+		{% endif %}
+		{% if collection %}
+		<li><strong>Colección:</strong> {{collection}}</li>
+		{% endif %}
+		<li><img src="imagenes/{{rating}}_stars.gif" alt="{{rating}}" /> ({{votes}} {% if votes==1 %}voto{% else %}votos{%endif%})</li>
+	</ul>
+	<div class="description">{% exec book.getDescription %}</div>
+	<div class="download">
+		<a href='{{globals.base_url}}download.php?url={% exec book.getURL %}' class="button" title="Descargar ebook: {{title}}">Descargar ebook</a>
+	</div>
+</div>

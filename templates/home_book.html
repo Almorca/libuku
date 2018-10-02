@@ -1,0 +1,11 @@
+<div class="boxgrid">
+  <a href="{{book_url}}"><img src="{{globals.book_images}}{% exec book.getImage %}" alt="Portada de {% exec book.getTitle %}" /></a>
+  	<div class="boxcaption">
+		<h3><a href="{{book_url}}">{% exec book.getTitle %}</a></h3>
+		{% if writers %}
+		<p class="author">de
+		{% for writer in writers %}{% if ! forloop.first %}, {% endif %}<span class="vcard">{{writer|safe}}</span>{% endfor %}
+		</p>
+		{% endif %}
+  	</div>
+</div>

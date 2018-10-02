@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+"http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<!--
+	Diseño basado en la Plantilla base HTML v.1 de
+    Olga Carreras - olgacarreras.blogspot.com
+	Licencia: https://www.coloriuris.net/contratos/820bfb5d89308bbeb2d7caf4982bb6f0
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xml:lang="{{globals.language}}">
+<head profile="http://dublincore.org/documents/dcq-html/">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Libuku.com: {{title}}</title>
+	<link rel="alternate" type="application/rss+xml" title="Novedades en formato RSS. " href="rss.php" />
+	<link rel="alternate" type="application/atom+xml" title="Novedades en formato Atom. " href="atom.php" />
+	<link rel="shortcut icon" href="{{globals.base_static}}images/favicon.ico" type="image/x-icon" />
+	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+
+	<meta http-equiv="content-language" content="{{globals.language}}" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<meta http-equiv="content-script-type" content="text/javascript" />
+	{% for name, content in meta %}<meta name="{{name}}" content="{{content}}" />
+	{% endfor %}
+	<meta name="DC.language" scheme="ISO639-1" content="{{globals.language}}" />
+	{% for name, content in rdfa %}<meta property="{{name}}" content="{{content}}" />
+	{% endfor %}
+
+	<link rel="home" href="{{globals.base_url}}" title="Inicio" />
+	<link rel="index" href="{{globals.base_url}}sitemap.php" title="Mapa web. " />
+	<link rel="search" href="{{globals.base_url}}search.php" title="Buscador. " />
+	<link rel="help" href="{{globals.base_url}}help.php" title="Ayuda. " />
+
+	<link href="{{globals.base_static}}css/style.css" type="text/css" rel="stylesheet" media="all" />
+	<!--<link href="estilosPantalla.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	<link href="estilosPrint.css" type="text/css" rel="stylesheet" media="print,tty" />
+	<link href="estilosTelevision.css" type="text/css" rel="stylesheet" media="tv" />
+	<link href="estilosSintetizador.css" type="text/css" rel="stylesheet" media="aural" />
+	<link href="estilosMovil.css " type="text/css" rel="stylesheet"  media="handheld" />
+	-->
+
+	<!--<script type="text/javascript" src="{{globals.base_static}}js/utils.js"></script>-->
+	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.1.js"></script>
+	<script type="text/javascript" src="{{globals.base_static}}js/home.js"></script>
+</head>
+
+<body{% if id_body %} id="{{id_body}}"{% endif %}>
+<div id="header">
+    <div id="headerLogo">
+    	<a href="{{globals.base_url}}" rel="home"><img src="{{globals.base_static}}/images/logo.png" alt="Libuku" height="60px" width="260px" /></a>
+		<span>{{globals.slogan}}</span>
+		<p>BETA</p>
+	</div>
+    <div id="headerBanner">
+    	<!-- publi -->
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-9606104200170050";
+		/* Libuku - Header */
+		google_ad_slot = "7324414527";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div>
+</div>
+<div id="main">
